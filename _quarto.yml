@@ -23,8 +23,11 @@ format:
     toc: true
 
 execute:
-  eval: true  # Ensure all code chunks are executed
-  echo: true  # Display code along with its output
+  eval: true
+  echo: true
+  warning: false
+  message: false
+  output: true
 
 
 

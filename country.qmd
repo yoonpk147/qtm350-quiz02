@@ -39,4 +39,3 @@ ax3.tick_params(axis='y', labelcolor='red')
 plt.title('Changes in Life Expectancy, GDP per Capita, and Population for South Korea Over Time')
 fig.tight_layout()
 plt.show()
-
