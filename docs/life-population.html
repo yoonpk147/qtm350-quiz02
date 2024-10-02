@@ -7,7 +7,7 @@
 <meta name="viewport" content="width=device-width, initial-scale=1.0, user-scalable=yes">
 
 
-<title>life-population – qtm350-quiz02</title>
+<title>Life Expectancy and Population – qtm350-quiz02</title>
 <style>
 code{white-space: pre-wrap;}
 span.smallcaps{font-variant: small-caps;}
@@ -119,17 +119,53 @@ ul.task-list li input[type="checkbox"] {
 <div id="quarto-content" class="quarto-container page-columns page-rows-contents page-layout-article page-navbar">
 <!-- sidebar -->
 <!-- margin-sidebar -->
-    <div id="quarto-margin-sidebar" class="sidebar margin-sidebar zindex-bottom">
-        
+    <div id="quarto-margin-sidebar" class="sidebar margin-sidebar">
+        <nav id="TOC" role="doc-toc" class="toc-active">
+    <h2 id="toc-title">On this page</h2>
+   
+  <ul>
+  <li><a href="#introduction" id="toc-introduction" class="nav-link active" data-scroll-target="#introduction">Introduction</a></li>
+  <li><a href="#graph" id="toc-graph" class="nav-link" data-scroll-target="#graph">Graph</a></li>
+  </ul>
+</nav>
     </div>
 <!-- main -->
 <main class="content" id="quarto-document-content">
 
+<header id="title-block-header" class="quarto-title-block default">
+<div class="quarto-title">
+<h1 class="title">Life Expectancy and Population</h1>
+</div>
 
 
 
+<div class="quarto-title-meta">
+
+    
+  
+    
+  </div>
+  
 
 
+</header>
+
+
+<section id="introduction" class="level2">
+<h2 class="anchored" data-anchor-id="introduction">Introduction</h2>
+<p>This page shows the analysis of the relationship between life expectancy and population across various countries.</p>
+</section>
+<section id="graph" class="level2">
+<h2 class="anchored" data-anchor-id="graph">Graph</h2>
+<p>import pandas as pd import matplotlib.pyplot as plt import seaborn as sns</p>
+<p>df = pd.read_csv(‘gapminder.csv’)</p>
+<p>sns.set_theme(style=“whitegrid”)</p>
+<p>plt.figure(figsize=(12, 8)) scatter_plot = sns.scatterplot( data=df, x=“population_millions”, y=“life_expectancy”, hue=“continent”, sizes=(20, 200), alpha=0.6, palette=“muted” )</p>
+<p>plt.title(“Relationship Between Life Expectancy and Population”, fontsize=16) plt.xlabel(“Population in Millions”, fontsize=14) plt.ylabel(“Life Expectancy (Years)”, fontsize=14) plt.xscale(“log”) plt.grid(True)</p>
+<p>plt.tight_layout() plt.show()</p>
+
+
+</section>
 
 </main> <!-- /main -->
 <script id="quarto-html-after-body" type="application/javascript">

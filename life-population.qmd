@@ -1,0 +1,39 @@
+---
+title: "Life Expectancy and Population"
+format: html
+---
+
+## Introduction
+
+This page shows the analysis of the relationship between life expectancy and population across various countries.
+
+## Graph
+
+```{python}
+import pandas as pd
+import matplotlib.pyplot as plt
+import seaborn as sns
+
+df = pd.read_csv('gapminder.csv')
+
+sns.set_theme(style="whitegrid")
+
+plt.figure(figsize=(12, 8))
+scatter_plot = sns.scatterplot(
+    data=df, 
+    x="population_millions", 
+    y="life_expectancy", 
+    hue="continent", 
+    sizes=(20, 200), 
+    alpha=0.6, 
+    palette="muted"
+)
+
+plt.title("Relationship Between Life Expectancy and Population", fontsize=16)
+plt.xlabel("Population in Millions", fontsize=14)
+plt.ylabel("Life Expectancy (Years)", fontsize=14)
+plt.xscale("log")
+plt.grid(True)
+
+plt.tight_layout()
+plt.show()

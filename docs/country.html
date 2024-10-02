@@ -7,7 +7,7 @@
 <meta name="viewport" content="width=device-width, initial-scale=1.0, user-scalable=yes">
 
 
-<title>country – qtm350-quiz02</title>
+<title>Country Analysis – qtm350-quiz02</title>
 <style>
 code{white-space: pre-wrap;}
 span.smallcaps{font-variant: small-caps;}
@@ -119,17 +119,59 @@ ul.task-list li input[type="checkbox"] {
 <div id="quarto-content" class="quarto-container page-columns page-rows-contents page-layout-article page-navbar">
 <!-- sidebar -->
 <!-- margin-sidebar -->
-    <div id="quarto-margin-sidebar" class="sidebar margin-sidebar zindex-bottom">
-        
+    <div id="quarto-margin-sidebar" class="sidebar margin-sidebar">
+        <nav id="TOC" role="doc-toc" class="toc-active">
+    <h2 id="toc-title">On this page</h2>
+   
+  <ul>
+  <li><a href="#introduction" id="toc-introduction" class="nav-link active" data-scroll-target="#introduction">Introduction</a></li>
+  <li><a href="#graph" id="toc-graph" class="nav-link" data-scroll-target="#graph">Graph</a></li>
+  <li><a href="#title-and-show-the-graph" id="toc-title-and-show-the-graph" class="nav-link" data-scroll-target="#title-and-show-the-graph">Title and show the graph</a></li>
+  </ul>
+</nav>
     </div>
 <!-- main -->
 <main class="content" id="quarto-document-content">
 
+<header id="title-block-header" class="quarto-title-block default">
+<div class="quarto-title">
+<h1 class="title">Country Analysis</h1>
+</div>
 
 
 
+<div class="quarto-title-meta">
+
+    
+  
+    
+  </div>
+  
 
 
+</header>
+
+
+<section id="introduction" class="level2">
+<h2 class="anchored" data-anchor-id="introduction">Introduction</h2>
+<p>This page analyses the changes in life expectancy, GDP per capita, and population over time of South Korea.</p>
+</section>
+<section id="graph" class="level2">
+<h2 class="anchored" data-anchor-id="graph">Graph</h2>
+<p>import pandas as pd import matplotlib.pyplot as plt</p>
+<p>df = pd.read_csv(‘gapminder.csv’)</p>
+<p>south_korea = df[df[‘country’] == ‘Korea, Rep.’]</p>
+<p>fig, ax1 = plt.subplots(figsize=(10, 6))</p>
+<p>ax1.plot(south_korea[‘year’], south_korea[‘life_expectancy’], color=‘blue’, marker=‘o’, label=‘Life Expectancy’) ax1.set_xlabel(‘Year’) ax1.set_ylabel(‘Life Expectancy’, color=‘blue’) ax1.tick_params(axis=‘y’, labelcolor=‘blue’)</p>
+<p>ax2 = ax1.twinx() ax2.plot(south_korea[‘year’], south_korea[‘gdp_per_capita’], color=‘green’, marker=‘o’, label=‘GDP per Capita’) ax2.set_ylabel(‘GDP per Capita (USD)’, color=‘green’) ax2.tick_params(axis=‘y’, labelcolor=‘green’)</p>
+<p>ax3 = ax1.twinx() ax3.spines[“right”].set_position((“axes”, 1.2)) ax3.plot(south_korea[‘year’], south_korea[‘population_millions’] / 1e6, color=‘red’, marker=‘o’, label=‘Population (Millions)’) ax3.set_ylabel(‘Population (Millions)’, color=‘red’) ax3.tick_params(axis=‘y’, labelcolor=‘red’)</p>
+</section>
+<section id="title-and-show-the-graph" class="level1">
+<h1>Title and show the graph</h1>
+<p>plt.title(‘Changes in Life Expectancy, GDP per Capita, and Population for South Korea Over Time’) fig.tight_layout() plt.show()</p>
+
+
+</section>
 
 </main> <!-- /main -->
 <script id="quarto-html-after-body" type="application/javascript">

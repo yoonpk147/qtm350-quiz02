@@ -1,7 +1,14 @@
 ---
-title: "qtm350-quiz02"
+title: "QTM 350 - Quiz 2 - Yoonsuh Park"
 ---
 
-This is a Quarto website.
+# Gapminder Dataset Analysis
 
-To learn more about Quarto websites visit <https://quarto.org/docs/websites>.
+This Gapminder dataset provides values for life expectancy, GDP per capita, and population, every five years, from 1952 to 2007.
+
+Included in this website are pages with analyses on the relationship between life expectancy & GDP per capita across countries, life expectancy & population across countries, and an analysis of the changes in life expectancy, GDP per capita and population of South Korea overtime.
+
+- [Life Expectancy and GDP per Capita](life-gdp.qmd)
+- [Life Expectancy and Population](life-population.qmd)
+- [Country Analysis](country.qmd)
+

@@ -14,10 +14,73 @@
     "text": "About this site"
   },
   {
+    "objectID": "life-gdp.html",
+    "href": "life-gdp.html",
+    "title": "Life Expectancy and GDP per Capita",
+    "section": "",
+    "text": "This page shows the analysis of the relationship between life exepectancy and GDP per capita across various countries."
+  },
+  {
+    "objectID": "life-gdp.html#introduction",
+    "href": "life-gdp.html#introduction",
+    "title": "Life Expectancy and GDP per Capita",
+    "section": "",
+    "text": "This page shows the analysis of the relationship between life exepectancy and GDP per capita across various countries."
+  },
+  {
+    "objectID": "life-gdp.html#graph",
+    "href": "life-gdp.html#graph",
+    "title": "Life Expectancy and GDP per Capita",
+    "section": "Graph",
+    "text": "Graph\nimport pandas as pd import matplotlib.pyplot as plt import seaborn as sns\ndf = pd.read_csv(‘gapminder.csv’)\nsns.set_theme(style=“whitegrid”)\nplt.figure(figsize=(12, 8)) scatter_plot = sns.scatterplot( data=df, x=“gdp_per_capita”, y=“life_expectancy”,\nsizes=(20, 200), alpha=0.6, palette=“muted” )\nplt.title(“Relationship Between Life Expectancy and GDP per Capita”, fontsize=16) plt.xlabel(“GDP per Capita (USD)”, fontsize=14) plt.ylabel(“Life Expectancy (Years)”, fontsize=14) plt.xscale(“log”) # Use a logarithmic scale for GDP per capita plt.grid(True)\nplt.tight_layout() plt.show()"
+  },
+  {
+    "objectID": "country.html",
+    "href": "country.html",
+    "title": "Country Analysis",
+    "section": "",
+    "text": "This page analyses the changes in life expectancy, GDP per capita, and population over time of South Korea."
+  },
+  {
+    "objectID": "country.html#introduction",
+    "href": "country.html#introduction",
+    "title": "Country Analysis",
+    "section": "",
+    "text": "This page analyses the changes in life expectancy, GDP per capita, and population over time of South Korea."
+  },
+  {
+    "objectID": "country.html#graph",
+    "href": "country.html#graph",
+    "title": "Country Analysis",
+    "section": "Graph",
+    "text": "Graph\nimport pandas as pd import matplotlib.pyplot as plt\ndf = pd.read_csv(‘gapminder.csv’)\nsouth_korea = df[df[‘country’] == ‘Korea, Rep.’]\nfig, ax1 = plt.subplots(figsize=(10, 6))\nax1.plot(south_korea[‘year’], south_korea[‘life_expectancy’], color=‘blue’, marker=‘o’, label=‘Life Expectancy’) ax1.set_xlabel(‘Year’) ax1.set_ylabel(‘Life Expectancy’, color=‘blue’) ax1.tick_params(axis=‘y’, labelcolor=‘blue’)\nax2 = ax1.twinx() ax2.plot(south_korea[‘year’], south_korea[‘gdp_per_capita’], color=‘green’, marker=‘o’, label=‘GDP per Capita’) ax2.set_ylabel(‘GDP per Capita (USD)’, color=‘green’) ax2.tick_params(axis=‘y’, labelcolor=‘green’)\nax3 = ax1.twinx() ax3.spines[“right”].set_position((“axes”, 1.2)) ax3.plot(south_korea[‘year’], south_korea[‘population_millions’] / 1e6, color=‘red’, marker=‘o’, label=‘Population (Millions)’) ax3.set_ylabel(‘Population (Millions)’, color=‘red’) ax3.tick_params(axis=‘y’, labelcolor=‘red’)"
+  },
+  {
     "objectID": "index.html",
     "href": "index.html",
-    "title": "qtm350-quiz02",
+    "title": "QTM 350 - Quiz 2 - Yoonsuh Park",
     "section": "",
-    "text": "This is a Quarto website.\nTo learn more about Quarto websites visit https://quarto.org/docs/websites."
+    "text": "Gapminder Dataset Analysis\nThis Gapminder dataset provides values for life expectancy, GDP per capita, and population, every five years, from 1952 to 2007.\nIncluded in this website are pages with analyses on the relationship between life expectancy & GDP per capita across countries, life expectancy & population across countries, and an analysis of the changes in life expectancy, GDP per capita and population of South Korea overtime.\n\nLife Expectancy and GDP per Capita\nLife Expectancy and Population\nCountry Analysis"
+  },
+  {
+    "objectID": "life-population.html",
+    "href": "life-population.html",
+    "title": "Life Expectancy and Population",
+    "section": "",
+    "text": "This page shows the analysis of the relationship between life expectancy and population across various countries."
+  },
+  {
+    "objectID": "life-population.html#introduction",
+    "href": "life-population.html#introduction",
+    "title": "Life Expectancy and Population",
+    "section": "",
+    "text": "This page shows the analysis of the relationship between life expectancy and population across various countries."
+  },
+  {
+    "objectID": "life-population.html#graph",
+    "href": "life-population.html#graph",
+    "title": "Life Expectancy and Population",
+    "section": "Graph",
+    "text": "Graph\nimport pandas as pd import matplotlib.pyplot as plt import seaborn as sns\ndf = pd.read_csv(‘gapminder.csv’)\nsns.set_theme(style=“whitegrid”)\nplt.figure(figsize=(12, 8)) scatter_plot = sns.scatterplot( data=df, x=“population_millions”, y=“life_expectancy”, hue=“continent”, sizes=(20, 200), alpha=0.6, palette=“muted” )\nplt.title(“Relationship Between Life Expectancy and Population”, fontsize=16) plt.xlabel(“Population in Millions”, fontsize=14) plt.ylabel(“Life Expectancy (Years)”, fontsize=14) plt.xscale(“log”) plt.grid(True)\nplt.tight_layout() plt.show()"
   }
 ]
